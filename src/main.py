@@ -1,23 +1,34 @@
-# ===== monkey‑patch for Python 3.10+ compatibility =====
-import collections
-import collections.abc
+# ===== begin compatibility monkey‑patches =====
+import sys, types
+
+# 1) Patch collections ABCs for attrdict (if you still need it)
+import collections, collections.abc
 collections.Mapping        = collections.abc.Mapping
 collections.MutableMapping = collections.abc.MutableMapping
 collections.Sequence       = collections.abc.Sequence
-# ======================================================
-# ===== monkey‑patch scipy.maxentropy & scipy.misc for Gensim logsumexp =====
-import sys, types
-import scipy.special
 
-# 1) Create a fake scipy.maxentropy module
+# 2) Patch triu for gensim.matutils
+import numpy as np
+import scipy.linalg
+import scipy.linalg.basic
+import scipy.linalg.special_matrices
+scipy.linalg.basic.triu            = np.triu
+scipy.linalg.special_matrices.triu = np.triu
+
+# 3) Patch logsumexp for gensim.models.ldamodel
+import scipy.special
+# fake scipy.maxentropy module
 mod_maxent = types.ModuleType("scipy.maxentropy")
 mod_maxent.logsumexp = scipy.special.logsumexp
 sys.modules["scipy.maxentropy"] = mod_maxent
-
-# 2) Patch scipy.misc to include logsumexp
+# also put logsumexp on scipy.misc
 import scipy.misc
 scipy.misc.logsumexp = scipy.special.logsumexp
-# ======================================================
+# ===== end compatibility monkey‑patches =====
+
+# Now your normal imports:
+from attrdict import AttrDict
+from gensim import models
 
 import os
 import sys
@@ -153,6 +164,7 @@ def load_data(config, logger, voc = None):
 
 
 def main():
+	print("JJJAAA")
 	'''read arguments'''
 	parser = build_parser() ## build parser is handled in args.py
 	args = parser.parse_args()
