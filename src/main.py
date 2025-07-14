@@ -1,21 +1,24 @@
-# ===== monkey‑patch for Python 3.10+ compatibility =====
+# ===== monkey‑patch for Python 3.10+ compatibility =====
 import collections
 import collections.abc
 collections.Mapping        = collections.abc.Mapping
 collections.MutableMapping = collections.abc.MutableMapping
 collections.Sequence       = collections.abc.Sequence
 # ======================================================
-# ===== monkey‑patch SciPy triu for Gensim under SciPy ≥1.10 =====
-import numpy as np
-import scipy.linalg
-import scipy.linalg.basic
-import scipy.linalg.special_matrices
+# ===== monkey‑patch scipy.maxentropy & scipy.misc for Gensim logsumexp =====
+import sys, types
+import scipy.special
 
-# Gensim will do “from scipy.linalg.basic import triu”
-scipy.linalg.basic.triu            = np.triu
-# …and “from scipy.linalg.special_matrices import triu”
-scipy.linalg.special_matrices.triu = np.triu
+# 1) Create a fake scipy.maxentropy module
+mod_maxent = types.ModuleType("scipy.maxentropy")
+mod_maxent.logsumexp = scipy.special.logsumexp
+sys.modules["scipy.maxentropy"] = mod_maxent
+
+# 2) Patch scipy.misc to include logsumexp
+import scipy.misc
+scipy.misc.logsumexp = scipy.special.logsumexp
 # ======================================================
+
 import os
 import sys
 import math
