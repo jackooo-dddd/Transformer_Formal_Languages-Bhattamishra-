@@ -26,10 +26,20 @@ if torch.cuda.is_available():
     for i in range(torch.cuda.device_count()):
         print(f" Device {i}: {torch.cuda.get_device_name(i)}")
 EOF
-python ~/scratch/Transformer_Formal_Languages-Bhattamishra-/src/main.py \
-  -mode train -run_name Shuffle2_SAN -dataset Shuffle-2 \
-  -model_type SAN -depth 2 -d_model 32 -heads 4 \
-  -pos_encode -batch_size 32 -epochs 50 -gpu 0
+cd ~/scratch/Transformer_Formal_Languages-Bhattamishra-/
+python -m src.main \
+  -mode train \
+  -run_name Shuffle2_SAN \
+  -dataset Shuffle-2 \
+  -model_type SAN \
+  -depth 2 \
+  -d_model 32 \
+  -heads 4 \
+  -pos_encode \
+  -batch_size 32 \
+  -epochs 50 \
+  -gpu 0
+
 
 
 
