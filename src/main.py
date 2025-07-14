@@ -5,7 +5,17 @@ collections.Mapping        = collections.abc.Mapping
 collections.MutableMapping = collections.abc.MutableMapping
 collections.Sequence       = collections.abc.Sequence
 # ======================================================
+# ===== monkey‑patch SciPy triu for Gensim under SciPy ≥1.10 =====
+import numpy as np
+import scipy.linalg
+import scipy.linalg.basic
+import scipy.linalg.special_matrices
 
+# Gensim will do “from scipy.linalg.basic import triu”
+scipy.linalg.basic.triu            = np.triu
+# …and “from scipy.linalg.special_matrices import triu”
+scipy.linalg.special_matrices.triu = np.triu
+# ======================================================
 import os
 import sys
 import math
