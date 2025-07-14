@@ -1,6 +1,11 @@
+# ===== monkey‑patch for Python 3.10+ compatibility =====
 import collections
 import collections.abc
-collections.Mapping = collections.abc.Mapping
+collections.Mapping        = collections.abc.Mapping
+collections.MutableMapping = collections.abc.MutableMapping
+collections.Sequence       = collections.abc.Sequence
+# ======================================================
+
 import os
 import sys
 import math
