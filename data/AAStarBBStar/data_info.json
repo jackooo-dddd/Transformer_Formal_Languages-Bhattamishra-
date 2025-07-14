@@ -1,0 +1,1 @@
+{"Lang": "AAStarBBStar-5", "Train Lengths": [63, 200], "Train Depths": [1.0, 1.0], "Train Size": 10000, "Val Bin-0 Lengths": [90, 200], "Val Bin-0 Depths": [1.0, 1.0], "Val Bin-0 Size": 1000, "Val Bin-1 Lengths": [253, 300], "Val Bin-1 Depths": [1.0, 1.0], "Val Bin-1 Size": 1000, "Val Bin-2 Lengths": [350, 400], "Val Bin-2 Depths": [1.0, 1.0], "Val Bin-2 Size": 1000}

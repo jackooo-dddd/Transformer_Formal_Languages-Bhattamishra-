@@ -1,0 +1,1 @@
+{"Lang": "Boolean-5", "Train Lengths": [2, 50], "Train Depths": [0, 21], "Train Size": 10000, "Val Bin-0 Lengths": [3, 50], "Val Bin-0 Depths": [0, 20], "Val Bin-0 Size": 2000, "Val Bin-1 Lengths": [51, 100], "Val Bin-1 Depths": [6, 34], "Val Bin-1 Size": 2000, "Val Bin-2 Lengths": [100, 150], "Val Bin-2 Depths": [8, 40], "Val Bin-2 Size": 2000}

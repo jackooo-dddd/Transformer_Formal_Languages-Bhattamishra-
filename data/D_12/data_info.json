@@ -1,0 +1,10 @@
+{"Lang": "D_n-12",
+"Train Lengths": [46, 100],
+"Train Depths": [9, 12],
+"Train Size": 10000,
+"Val Bin-0 Lengths": [48, 100],
+"Val Bin-0 Depths": [10, 12],
+"Val Bin-0 Size": 2000,
+"Val Bin-1 Lengths": [110, 200],
+"Val Bin-1 Depths": [12, 12],
+"Val Bin-1 Size": 2000}

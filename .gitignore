@@ -28,7 +28,6 @@ share/python-wheels/
 MANIFEST
 
 #Directories
-data/
 runs/
 models/
 out/

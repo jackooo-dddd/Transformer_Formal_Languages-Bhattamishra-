@@ -22,8 +22,8 @@ mod_maxent = types.ModuleType("scipy.maxentropy")
 mod_maxent.logsumexp = scipy.special.logsumexp
 sys.modules["scipy.maxentropy"] = mod_maxent
 # also put logsumexp on scipy.misc
-import scipy.misc
-scipy.misc.logsumexp = scipy.special.logsumexp
+# import scipy.misc
+# scipy.misc.logsumexp = scipy.special.logsumexp
 # ===== end compatibility monkey‑patches =====
 
 # Now your normal imports:

@@ -1,0 +1,1 @@
+{"Lang": "Shuffle-4", "Train Lengths": [2, 100], "Train Depths": [1, 30], "Train Size": 10000, "Val Bin-0 Lengths": [2, 100], "Val Bin-0 Depths": [1, 30], "Val Bin-0 Size": 2000, "Val Bin-1 Lengths": [102, 150], "Val Bin-1 Depths": [8, 37], "Val Bin-1 Size": 2000, "Val Bin-2 Lengths": [150, 200], "Val Bin-2 Depths": [9, 52], "Val Bin-2 Size": 2000}

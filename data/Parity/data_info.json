@@ -1,0 +1,1 @@
+{"Train Size": 10000, "Val Bin-0 Depths": [2, 36], "Val Bin-0 Lengths": [3, 50], "Val Bin-0 Size": 2000, "Val Bin-1 Size": 2000, "Val Bin-1 Depths": [16, 62], "Lang": "Parity-2", "Train Depths": [0, 38], "Train Lengths": [2, 50], "Val Bin-1 Lengths": [51, 100]}

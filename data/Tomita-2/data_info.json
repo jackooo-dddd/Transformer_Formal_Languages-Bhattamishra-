@@ -1,0 +1,1 @@
+{"Lang": "Tomita-2", "Train Lengths": [2, 50], "Train Depths": [1, 1], "Train Size": 1000, "Val Bin-0 Lengths": [2, 50], "Val Bin-0 Depths": [1, 1], "Val Bin-0 Size": 25, "Val Bin-1 Lengths": [52, 100], "Val Bin-1 Depths": [1, 1], "Val Bin-1 Size": 25}
